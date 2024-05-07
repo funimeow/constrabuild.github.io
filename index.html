@@ -221,19 +221,17 @@
     <div class="overlay"></div>
     <script>
      
-        let lastScrollTop = 0;
+         let lastScrollTop = 0;
         window.addEventListener("scroll", function() {
-          let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-          let scaledScroll = currentScroll / 0.8; // Adjust for the scaling factor
-        
-          if (scaledScroll > lastScrollTop) {
-            // Downscroll code
-            document.querySelector(".navbar").classList.add("hidden");
-          } else {
-            // Upscroll code
-            document.querySelector(".navbar").classList.remove("hidden");
-          }
-          lastScrollTop = scaledScroll <= 0 ? 0 : scaledScroll; // For Mobile or negative scrolling
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+                // Downscroll code
+                document.querySelector(".navbar").classList.add("hidden");
+            } else {
+                // Upscroll code
+                document.querySelector(".navbar").classList.remove("hidden");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
         }, false);
         
         // Add fade-in animation when element comes into view
