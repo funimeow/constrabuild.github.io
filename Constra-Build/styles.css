@@ -1,0 +1,284 @@
+
+@font-face {
+    font-family: 'Copenhagen Grotesk Nova';
+    src: url('fonts/copenhagen.woff2') format('woff2'),
+         url('fonts/copenhagen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.5);
+      font-size: 1rem;
+    }
+    100% {
+      transform: scale(1);
+      font-size: 1.5rem;
+    }
+  }
+.bigger-text {
+    font-size: 1.5em;
+}
+* {
+    user-select: none;
+}
+
+.section-content p {
+    font-size: 0.8em;
+    transition: font-size 0.5s ease;
+}
+
+
+.paragraph-visible {
+    font-size: 1em;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Copenhagen Grotesk Nova', sans-serif;
+    font-size: 80%;
+    
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    transform-origin: top left;
+    width: 125%;
+    overflow-x: hidden;
+
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.custom-titles {
+    padding-bottom: 10px;
+}
+
+
+.section-content p {
+    font-size: 0.8em;
+    transition: font-size 0.5s ease;
+}
+
+
+.paragraph-visible {
+    font-size: 1em;
+}
+
+.title-fade-in {
+    opacity: 0;
+    animation: fadeInFromTop 0.75s ease forwards;
+}
+.text-scale {
+    font-size: 0.8em;
+    transition: font-size 0.5s ease;
+}
+
+.text-scale:hover {
+    font-size: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.navbar {
+    transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+
+
+
+.bg-white, .bg-dark {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-bg-dark {
+    background-color: #222222;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+
+.navbar {
+    position: fixed;
+    z-index: 3;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
+
+
+.header {
+    text-align: center;
+  
+    padding-top: 80px;
+
+}
+header .container {
+    padding-top: 60px;
+}
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 1.5em;
+}
+
+
+.footer {
+  
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 9999;
+}
+.section-content p {
+    margin-bottom: 20px;
+}
+.footer p {
+    margin: 0;
+}
+.footer .quick-links a {
+    color: #fff;
+    text-decoration-color: #fff;
+}
+
+a:visited { text-decoration: underline; }
+
+a:focus { text-decoration: underline; }
+
+.footer .quick-links a:hover {
+    color: #ccc;
+}
+
+.navbar,
+.header,
+.footer,
+.user-select-none {
+    user-select: none;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        font-size: 1rem;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        font-size: 1.5rem;
+        opacity: 1;
+    }
+}
+
+@keyframes zoombuttonIn {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+        font-size: 1.3rem;
+    }
+    100% {
+        transform: scale(1);
+        font-size: 1.3rem;
+        opacity: 1;
+    }
+}
+
+.zoom-in {
+    font-size: 1rem;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.5, 0, 0.1, 1), opacity 0.5s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+.zoom-in.loaded {
+    transform: scale(1);
+    font-size: 1.5rem;
+    opacity: 1;
+}
+
+.aboutmoew {
+    animation-delay: 1s;
+}
+
+.paragraphmeow {
+    animation: zoomIn 0.40s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.paragraphmeoww {
+    animation: zoomIn 0.40s ease forwards;
+    animation-delay: 1s;
+}
+.paragraphmeowww {
+    animation: zoomIn 0.40s ease forwards;
+    animation-delay: 2s;
+}
+
+.buttonmeow {
+    animation: zoombuttonIn 4s ease forwards;
+   
+    
+}
+.buttonnmeow {
+    animation: zoombuttonIn 1s ease forwards;
+   
+}
+
+.title-fade-in-1 {
+    opacity: 0;
+    animation: fadeInFromTop 0.75s ease forwards;
+    animation-delay: 2s;
+}
