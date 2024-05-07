@@ -1,19 +1,45 @@
-let prevScrollPos = window.pageYOffset;
-
-window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
-    const topBar = document.getElementById("topBar");
-    const taskBar = document.querySelector(".task-bar");
+document.addEventListener('DOMContentLoaded', () => {
     
-    if (currentScrollPos == 0) {
-        topBar.style.top = "0";
-        taskBar.style.top = "40px"; // Adjust according to the height of the top bar
-    } else if (prevScrollPos > currentScrollPos) {
-        topBar.style.top = "0";
-        taskBar.style.top = "40px"; // Adjust according to the height of the top bar
-    } else {
-        topBar.style.top = "-40px"; // Slide up the top bar
-        taskBar.style.top = "0"; // Move the task bar to the top
-    }
-    prevScrollPos = currentScrollPos;
-}
+    const titleElements = document.querySelectorAll('.title-fade-in');
+    const titleFadeInObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('active')) {
+                entry.target.classList.add('active');
+            }
+        });
+    });
+    titleElements.forEach(element => {
+        titleFadeInObserver.observe(element);
+    });
+
+    
+    const sectionElements = document.querySelectorAll('section');
+    const sectionFadeInObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('active')) {
+                entry.target.classList.add('active');
+            }
+        });
+    });
+    sectionElements.forEach(element => {
+        sectionFadeInObserver.observe(element);
+    });
+
+    
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        currentScroll /= 0.8; 
+        if (currentScroll > lastScrollTop) {
+            
+            document.querySelector(".navbar").classList.add("hidden"); 
+        } else {
+            
+            document.querySelector(".navbar").classList.remove("hidden"); 
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+    }, false);
+});
+
+
